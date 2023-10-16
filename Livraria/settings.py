@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]  # Configuração do heroku "*"
 
-
 # Application definition
 
 INSTALLED_APPS = [
