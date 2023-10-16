@@ -1,1 +1,1 @@
-web: gunicorn Livraria.wsgi
+web: gunicorn Livraria.wsgi --log-file -
