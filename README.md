@@ -41,7 +41,6 @@ DEPLOY DO PROJETO:
 
 3 - Faça o seguinte comando no terminal: python manage.py collectstatic --noinput
 
-Obs: essa parte você deixa para o final
 
 INTEGRAÇÃO GIT E HEROKU:
 
@@ -52,3 +51,10 @@ INTEGRAÇÃO GIT E HEROKU:
 3 - crie um arquivo gitignore o conteúdo do arquivo você irá gerar no site do gitignore, use Django e Pycharm. use o site gitignore.io
 
 4 - No gitignore comente a parte de banco de dados do sqlite, geralmente fica na linha 10 e 11.
+
+NOTA IMPORTANTE:
+
+Caso queira acessar a documentação desse projeto acesse este Link: https://docs.google.com/document/d/1Tc_PpOei8wdtpJLZ6h2Sa4pa72p8WtEZN4q8g2d-dB4/edit
+
+Você também pode acessa a pasta Content nela contém uma imagem com todas as rotas disponíveis, a rota para você ter acesso a todas as classes e métodos é: http://localhost:8000/api/swagger/#/api/api_compras_partial_update
+A rota default é: http://localhost:8000/
