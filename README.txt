@@ -1,10 +1,25 @@
 DEPENDÊNCIAS:
 
-1 - pip install Django
+1 - pip install django
 
 2 - pip install gunicorn
 
 3 - pip install whitenoise
+
+4 - pip install djangorestframework
+
+5 - pip install flake8
+
+6 - pip install black
+
+7 - pip install djangorestframework-simplejwt
+
+8 - pip install drf-spectacular
+
+9 - pip install django-cors-headers
+
+
+Observação: após instar a quarta dependência, vá no arquivo settings do seu projeto e em installed_apps acrescente rest_farmework
 
 COMANDOS:
 
@@ -34,6 +49,6 @@ INTEGRAÇÃO GIT E HEROKU:
 
 2 - suba o projeto para esse repositório
 
-3 - crie um arquivo gitignore o conteúdo do arquivo você irá gerar no site do gitignore, use Django e Pycharm.
+3 - crie um arquivo gitignore o conteúdo do arquivo você irá gerar no site do gitignore, use Django e Pycharm. use o site gitignore.io
 
 4 - No gitignore comente a parte de banco de dados do sqlite, geralmente fica na linha 10 e 11.

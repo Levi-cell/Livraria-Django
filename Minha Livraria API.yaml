@@ -1,0 +1,1257 @@
+openapi: 3.0.3
+info:
+  title: Minha Livraria API
+  version: 1.0.0
+  description: API com os endpoints e documentação da minha livraria
+paths:
+  /api/autores/:
+    get:
+      operationId: api_autores_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Autor'
+          description: ''
+    post:
+      operationId: api_autores_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Autor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Autor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Autor'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Autor'
+          description: ''
+  /api/autores/{id}/:
+    get:
+      operationId: api_autores_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this autor.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Autor'
+          description: ''
+    put:
+      operationId: api_autores_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this autor.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Autor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Autor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Autor'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Autor'
+          description: ''
+    patch:
+      operationId: api_autores_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this autor.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAutor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAutor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAutor'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Autor'
+          description: ''
+    delete:
+      operationId: api_autores_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this autor.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/categorias/:
+    get:
+      operationId: api_categorias_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Categoria'
+          description: ''
+    post:
+      operationId: api_categorias_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+  /api/categorias/{id}/:
+    get:
+      operationId: api_categorias_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this categoria.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+    put:
+      operationId: api_categorias_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this categoria.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+    patch:
+      operationId: api_categorias_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this categoria.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoria'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoria'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoria'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+    delete:
+      operationId: api_categorias_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this categoria.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/compras/:
+    get:
+      operationId: api_compras_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Compra'
+          description: ''
+    post:
+      operationId: api_compras_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CriarEditarCompra'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CriarEditarCompra'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CriarEditarCompra'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CriarEditarCompra'
+          description: ''
+  /api/compras/{id}/:
+    get:
+      operationId: api_compras_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this compra.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Compra'
+          description: ''
+    put:
+      operationId: api_compras_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this compra.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CriarEditarCompra'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CriarEditarCompra'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CriarEditarCompra'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CriarEditarCompra'
+          description: ''
+    patch:
+      operationId: api_compras_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this compra.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCriarEditarCompra'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCriarEditarCompra'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCriarEditarCompra'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CriarEditarCompra'
+          description: ''
+    delete:
+      operationId: api_compras_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this compra.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/editoras/:
+    get:
+      operationId: api_editoras_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Editora'
+          description: ''
+    post:
+      operationId: api_editoras_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Editora'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Editora'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Editora'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Editora'
+          description: ''
+  /api/editoras/{id}/:
+    get:
+      operationId: api_editoras_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this editora.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Editora'
+          description: ''
+    put:
+      operationId: api_editoras_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this editora.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Editora'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Editora'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Editora'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Editora'
+          description: ''
+    patch:
+      operationId: api_editoras_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this editora.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedEditora'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedEditora'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedEditora'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Editora'
+          description: ''
+    delete:
+      operationId: api_editoras_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this editora.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/livros/:
+    get:
+      operationId: api_livros_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LivroDetail'
+          description: ''
+    post:
+      operationId: api_livros_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LivroDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/LivroDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LivroDetail'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LivroDetail'
+          description: ''
+  /api/livros/{id}/:
+    get:
+      operationId: api_livros_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this livro.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LivroDetail'
+          description: ''
+    put:
+      operationId: api_livros_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this livro.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LivroDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/LivroDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LivroDetail'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LivroDetail'
+          description: ''
+    patch:
+      operationId: api_livros_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this livro.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedLivroDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedLivroDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedLivroDetail'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LivroDetail'
+          description: ''
+    delete:
+      operationId: api_livros_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this livro.
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /categorias-apiview/:
+    get:
+      operationId: categorias_apiview_retrieve
+      tags:
+      - categorias-apiview
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: categorias_apiview_create
+      tags:
+      - categorias-apiview
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+  /categorias-apiview/{id}/:
+    get:
+      operationId: categorias_apiview_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-apiview
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: categorias_apiview_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-apiview
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: categorias_apiview_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-apiview
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /categorias-generic/:
+    get:
+      operationId: categorias_generic_list
+      tags:
+      - categorias-generic
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Categoria'
+          description: ''
+    post:
+      operationId: categorias_generic_create
+      tags:
+      - categorias-generic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+  /categorias-generic/{id}/:
+    get:
+      operationId: categorias_generic_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-generic
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+    put:
+      operationId: categorias_generic_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-generic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+    patch:
+      operationId: categorias_generic_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-generic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoria'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoria'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoria'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+          description: ''
+    delete:
+      operationId: categorias_generic_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categorias-generic
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /token/:
+    post:
+      operationId: token_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenObtainPair'
+          description: ''
+  /token/refresh/:
+    post:
+      operationId: token_refresh_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+components:
+  schemas:
+    Autor:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          maxLength: 255
+      required:
+      - id
+      - nome
+    Categoria:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        descricao:
+          type: string
+          title: Descrição
+          maxLength: 255
+      required:
+      - descricao
+      - id
+    Compra:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        usuario:
+          type: string
+        itens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItensCompra'
+        total:
+          type: string
+          readOnly: true
+      required:
+      - id
+      - itens
+      - status
+      - total
+      - usuario
+    CriarEditarCompra:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        itens:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriarEditarItensCompras'
+      required:
+      - id
+      - itens
+    CriarEditarItensCompras:
+      type: object
+      properties:
+        livro:
+          type: integer
+        quantidade:
+          type: integer
+      required:
+      - livro
+      - quantidade
+    Editora:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          maxLength: 255
+        site:
+          type: string
+          format: uri
+          maxLength: 255
+      required:
+      - id
+      - nome
+      - site
+    EditoraNested:
+      type: object
+      properties:
+        nome:
+          type: string
+          maxLength: 255
+      required:
+      - nome
+    ItensCompra:
+      type: object
+      properties:
+        livro:
+          allOf:
+          - $ref: '#/components/schemas/Nested'
+          readOnly: true
+        quantidade:
+          type: integer
+        total:
+          type: string
+          readOnly: true
+      required:
+      - livro
+      - quantidade
+      - total
+    LivroDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        categoria:
+          type: string
+        editora:
+          $ref: '#/components/schemas/EditoraNested'
+        autores:
+          type: string
+          readOnly: true
+        titulo:
+          type: string
+          maxLength: 255
+        ISBN:
+          type: string
+          maxLength: 32
+        quantidade:
+          type: integer
+        preco:
+          type: number
+          format: double
+      required:
+      - ISBN
+      - autores
+      - categoria
+      - editora
+      - id
+      - preco
+      - quantidade
+      - titulo
+    Nested:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        titulo:
+          type: string
+          maxLength: 255
+        ISBN:
+          type: string
+          maxLength: 32
+        quantidade:
+          type: integer
+        preco:
+          type: number
+          format: double
+        categoria:
+          allOf:
+          - $ref: '#/components/schemas/Nested'
+          readOnly: true
+        editora:
+          allOf:
+          - $ref: '#/components/schemas/Nested'
+          readOnly: true
+        autores:
+          type: array
+          items:
+            $ref: '#/components/schemas/Nested'
+          readOnly: true
+      required:
+      - ISBN
+      - autores
+      - categoria
+      - editora
+      - id
+      - preco
+      - quantidade
+      - titulo
+    PatchedAutor:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          maxLength: 255
+    PatchedCategoria:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        descricao:
+          type: string
+          title: Descrição
+          maxLength: 255
+    PatchedCriarEditarCompra:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        itens:
+          type: array
+          items:
+            $ref: '#/components/schemas/CriarEditarItensCompras'
+    PatchedEditora:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          maxLength: 255
+        site:
+          type: string
+          format: uri
+          maxLength: 255
+    PatchedLivroDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        categoria:
+          type: string
+        editora:
+          $ref: '#/components/schemas/EditoraNested'
+        autores:
+          type: string
+          readOnly: true
+        titulo:
+          type: string
+          maxLength: 255
+        ISBN:
+          type: string
+          maxLength: 32
+        quantidade:
+          type: integer
+        preco:
+          type: number
+          format: double
+    TokenObtainPair:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+      required:
+      - access
+      - password
+      - refresh
+      - username
+    TokenRefresh:
+      type: object
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          writeOnly: true
+      required:
+      - access
+      - refresh
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
