@@ -40,10 +40,6 @@ DEPLOY DO PROJETO:
 
 3 - Faça o seguinte comando no terminal: python manage.py collectstatic --noinput
 
-<<<<<<< HEAD:README.txt
-=======
-
->>>>>>> 868e119af9f3619261bf8bf6f0b3e0fbb56684f1:README.md
 INTEGRAÇÃO GIT E HEROKU:
 
 1 - crie um repositorio no GitHub
@@ -54,7 +50,6 @@ INTEGRAÇÃO GIT E HEROKU:
 
 4 - No gitignore comente a parte de banco de dados do sqlite, geralmente fica na linha 10 e 11.
 
-<<<<<<< HEAD:README.txt
 NOTAS IMPORTANTES:
 
 1 - Caso queira acessar a documentação desse projeto acesse este Link: https://docs.google.com/document/d/1Tc_PpOei8wdtpJLZ6h2Sa4pa72p8WtEZN4q8g2d-dB4/edit
@@ -64,11 +59,4 @@ NOTAS IMPORTANTES:
 3 - A rota para você ter acesso a todas as classes e métodos é: http://localhost:8000/api/swagger/#/api/api_compras_partial_update
 
 4 - A rota default é: http://localhost:8000/
-=======
-NOTA IMPORTANTE:
 
-Caso queira acessar a documentação desse projeto acesse este Link: https://docs.google.com/document/d/1Tc_PpOei8wdtpJLZ6h2Sa4pa72p8WtEZN4q8g2d-dB4/edit
-
-Você também pode acessa a pasta Content nela contém uma imagem com todas as rotas disponíveis, a rota para você ter acesso a todas as classes e métodos é: http://localhost:8000/api/swagger/#/api/api_compras_partial_update
-A rota default é: http://localhost:8000/
->>>>>>> 868e119af9f3619261bf8bf6f0b3e0fbb56684f1:README.md
